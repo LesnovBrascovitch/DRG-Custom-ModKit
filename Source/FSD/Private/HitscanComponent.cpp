@@ -5,6 +5,7 @@
 #include "DrawDebugHelpers.h"
 #include "CollisionQueryParams.h"
 #include "FSDPhysicalMaterial.h"
+#include "HealthComponentBase.h"
 
 void UHitscanComponent::Fire(const FVector& Origin, const FVector_NetQuantizeNormal& Direction, bool playFireFX)
 {
@@ -21,6 +22,11 @@ void UHitscanComponent::Fire(const FVector& Origin, const FVector_NetQuantizeNor
         CollisionParameters.bReturnPhysicalMaterial = true;
 
         CollisionParameters.AddIgnoredActor(OwnerWeapon);
+        APlayerCharacter* Character = Cast<APlayerCharacter>(OwnerWeapon->GetOwner());
+        if (IsValid(Character)) {
+            CollisionParameters.AddIgnoredActor(Character);
+        }
+
 
         FRotator MuzzleRotation = FPMesh->GetSocketRotation(TEXT("Muzzle"));
         FVector MuzzleForwardVector = MuzzleRotation.Vector();
@@ -41,6 +47,11 @@ void UHitscanComponent::Fire(const FVector& Origin, const FVector_NetQuantizeNor
             UFSDPhysicalMaterial* FSDPhysicalMat = Cast<UFSDPhysicalMaterial>(Hit.PhysMaterial);
             if (IsValid(FSDPhysicalMat)) {
                 FSDPhysicalMat->SpawnImpactParticlesFromHit(GetWorld(), Hit);
+            }
+
+            UHealthComponentBase* HealthComp = HitActor->FindComponentByClass<UHealthComponentBase>();
+            if (IsValid(HealthComp)) {
+                HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
             }
         }
     }

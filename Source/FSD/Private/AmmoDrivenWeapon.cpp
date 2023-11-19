@@ -144,7 +144,7 @@ void AAmmoDrivenWeapon::OnWeaponFired(const FVector& Location) {
                     }
                     
                     auto FirePerSecondTimer = UKismetMathLibrary::SafeDivide(1, RateOfFire);
-                    GetWorld()->GetTimerManager().SetTimer(FireWaitHandle, this, &AAmmoDrivenWeapon::StopFireWaitTimer, FirePerSecondTimer, false);
+                    GetWorld()->GetTimerManager().SetTimer(FireWaitHandle, this, &AAmmoDrivenWeapon::StopFireWaitTimer, FirePerSecondTimer - 0.1f, false);
 
                     //Consume Clip
                     ClipCount = FMath::Clamp((ClipCount - ShotCost), 0, 99999);

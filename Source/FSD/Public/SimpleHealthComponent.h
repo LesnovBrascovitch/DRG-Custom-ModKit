@@ -46,6 +46,7 @@ protected:
 public:
     USimpleHealthComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    virtual void TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass) override;
     
 protected:
     UFUNCTION(BlueprintCallable)

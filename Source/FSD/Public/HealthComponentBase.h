@@ -68,8 +68,9 @@ public:
     float TakeRadialDamage(float damageAmount, FVector BlastCenter, float BlastRadius, float MaxDamageRadius, float MinDamagePct, FDamageData& DamageData);
     
     UFUNCTION(BlueprintCallable)
-    void TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass);
+    virtual void TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass);
     
+
     UFUNCTION(BlueprintCallable)
     void SetHealthDirectly(float newHealthValue);
     

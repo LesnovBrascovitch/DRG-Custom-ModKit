@@ -1,5 +1,17 @@
 #include "SimpleHealthComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "HealthComponentBase.h"
+#include "Math/UnrealMathUtility.h"
+
+void USimpleHealthComponent::TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass) {
+    Damage = FMath::Clamp(Damage + damageAmount, 0.f, MaxHealth);
+    OnHealthChanged.Broadcast(MaxHealth - Damage);
+    OnDamageTaken.Broadcast(damageAmount);
+
+    if (Damage == MaxHealth) {
+        OnDeath.Broadcast(this);
+    }
+}
 
 void USimpleHealthComponent::OnRep_Damage(float oldDamage) {
 }

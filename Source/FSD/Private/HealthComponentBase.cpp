@@ -5,6 +5,7 @@ float UHealthComponentBase::TakeRadialDamage(float damageAmount, FVector BlastCe
 }
 
 void UHealthComponentBase::TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass) {
+    
 }
 
 void UHealthComponentBase::SetHealthDirectly(float newHealthValue) {

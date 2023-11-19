@@ -1,5 +1,6 @@
 #include "DamageComponent.h"
 #include "Templates/SubclassOf.h"
+#include "HealthComponentBase.h"
 
 void UDamageComponent::PreTestDamageConditions() {
 }
@@ -13,6 +14,14 @@ float UDamageComponent::GetDamage() const {
 }
 
 void UDamageComponent::DamageTargetFromHit(const FHitResult& HitResult) const {
+    AActor* HitActor = HitResult.GetActor();
+    if (IsValid(HitActor)) {
+        UHealthComponentBase* HealthComp = HitActor->FindComponentByClass<UHealthComponentBase>();
+        if (IsValid(HealthComp)) {
+            
+            HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
+        }
+    }
 }
 
 void UDamageComponent::DamageTarget_CDO(const FVector& Location, AActor* Owner, AActor* hitActor) {

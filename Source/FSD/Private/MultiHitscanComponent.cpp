@@ -5,6 +5,7 @@
 #include "DrawDebugHelpers.h"
 #include "CollisionQueryParams.h"
 #include "FSDPhysicalMaterial.h"
+#include "HealthComponentBase.h"
 
 void UMultiHitscanComponent::Server_RegisterHit_Implementation(const FMultiHitScanHits& hitResults) {
 }
@@ -33,7 +34,10 @@ void UMultiHitscanComponent::Fire(const FVector& Origin, const FVector_NetQuanti
         CollisionParameters.bReturnPhysicalMaterial = true;
 
         CollisionParameters.AddIgnoredActor(OwnerWeapon);
-
+        APlayerCharacter* Character = Cast<APlayerCharacter>(OwnerWeapon->GetOwner());
+        if (IsValid(Character)) {
+            CollisionParameters.AddIgnoredActor(Character);
+        }
         for (int32 i = 0; i < BulletsPerShot; ++i)
         {
             FRotator MuzzleRotation = FPMesh->GetSocketRotation(TEXT("Muzzle"));
@@ -58,6 +62,11 @@ void UMultiHitscanComponent::Fire(const FVector& Origin, const FVector_NetQuanti
                 UFSDPhysicalMaterial* FSDPhysicalMat = Cast<UFSDPhysicalMaterial>(Hit.PhysMaterial);
                 if (IsValid(FSDPhysicalMat)) {
                     FSDPhysicalMat->SpawnImpactParticlesFromHit(GetWorld(), Hit);
+                }
+
+                UHealthComponentBase* HealthComp = HitActor->FindComponentByClass<UHealthComponentBase>();
+                if (IsValid(HealthComp)) {
+                    HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
                 }
             }
 
