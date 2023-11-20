@@ -8,6 +8,7 @@
 #include "FSDPhysicalMaterial.h"
 #include "Engine/World.h"
 #include "ProjectileBase.h"
+#include "Kismet/KismetMathLibrary.h"
 
 void UProjectileLauncherComponent::SetProjectileClass(TSubclassOf<AProjectileBase> NewProjectileClass) {
 }
@@ -40,9 +41,30 @@ void UProjectileLauncherComponent::Fire(const FVector& Origin, const FVector_Net
 
         //FHitResult Hit;
         if(IsValid(ProjectileClass)){
+
+
             FTransform SpawnTransform;
             SpawnTransform.SetLocation(MuzzleLocation);
+            
+            APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(OwnerWeapon->GetOwner());
+
             SpawnTransform.SetRotation(MuzzleRotation.Quaternion());
+
+            if (IsValid(PlayerCharacter)) {
+                USceneComponent* Camera = Cast<USceneComponent>(PlayerCharacter->GetDefaultSubobjectByName(TEXT("FirstPersonCamera")));
+                if (IsValid(Camera)) {
+                    FVector OriginLocation = MuzzleLocation;
+                    FVector TargetLocation = Camera->GetSocketLocation(TEXT("NONE")) + (Camera->GetForwardVector() * 10000);
+                
+                    FQuat Quat = UKismetMathLibrary::FindLookAtRotation(OriginLocation, TargetLocation).Quaternion();
+                    SpawnTransform.SetRotation(Quat);
+                }
+                
+            }
+            else {
+                SpawnTransform.SetRotation(MuzzleRotation.Quaternion());
+            }
+
             SpawnTransform.SetScale3D(FVector(1.f));
 
             FActorSpawnParameters SpawnParameter;
@@ -50,7 +72,8 @@ void UProjectileLauncherComponent::Fire(const FVector& Origin, const FVector_Net
             SpawnParameter.bNoFail;
             SpawnParameter.Owner = OwnerWeapon->GetOwner();
 
-            World->SpawnActor<AProjectileBase>(ProjectileClass, SpawnTransform, SpawnParameter);
+            AProjectileBase* SpawnedProjectile = World->SpawnActor<AProjectileBase>(ProjectileClass, SpawnTransform, SpawnParameter);
+            OnProjectileSpawned.Broadcast(SpawnedProjectile);
         }
         //GetWorld()->LineTraceSingleByChannel(Hit, MuzzleLocation, TargetLocation, ECC_GameTraceChannel3, CollisionParameters);
         //DrawDebugLine(GetWorld(), MuzzleLocation, TargetLocation, FColor::Red, false, 1.f, 0U, 0.1f);

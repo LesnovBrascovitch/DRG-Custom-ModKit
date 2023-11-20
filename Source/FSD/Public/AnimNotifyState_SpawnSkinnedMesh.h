@@ -10,6 +10,10 @@ UCLASS(Blueprintable, CollapseCategories, EditInlineNew, MinimalAPI)
 class UAnimNotifyState_SpawnSkinnedMesh : public UAnimNotifyState {
     GENERATED_BODY()
 public:
+    virtual void NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration);
+
+    virtual void NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation);
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EItemCategory ItemCategory;
     

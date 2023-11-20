@@ -28,6 +28,11 @@ void AItem::Server_StartUsing_Implementation(bool NewIsUsing) {
 void AItem::Resupply(float percentage) {
 }
 
+UFirstPersonStaticMeshComponent* AItem::GetFPAnimationEventMesh()
+{
+    return Receive_GetFPAnimationEventMesh();
+}
+
 
 void AItem::OnRep_IsUsing(bool OldValue) {
 }

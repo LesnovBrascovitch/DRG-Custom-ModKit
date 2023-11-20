@@ -166,6 +166,8 @@ protected:
 public:
     UFUNCTION(BlueprintCallable)
     void Resupply(float percentage);
+
+    UFirstPersonStaticMeshComponent* GetFPAnimationEventMesh();
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

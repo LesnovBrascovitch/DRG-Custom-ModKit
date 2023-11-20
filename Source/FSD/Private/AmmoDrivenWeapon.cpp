@@ -167,6 +167,12 @@ void AAmmoDrivenWeapon::OnWeaponFired(const FVector& Location) {
         if (WeaponEmptySound) {
             UGameplayStatics::SpawnSoundAttached(WeaponEmptySound, this->FPMesh, TEXT("Muzzle"));
         }
+
+        if (IsValid(FireSound)) {
+            if (FireSound->GetDuration() == 10000.0f) {
+                FireSoundInstance->FadeOut(0.15f, 0.f);
+            }
+        }
     }
 
 
@@ -206,6 +212,13 @@ void AAmmoDrivenWeapon::RecieveStopUsing_Implementation()
 {
     UKismetSystemLibrary::PrintString(this, "[C++] AmmoDrivenWeapon - RecieveStopUsing", true, true, FColor::Cyan, 2.f);
     IsFiring = false;
+
+    if (IsValid(FireSound)) {
+        if (FireSound->GetDuration() == 10000.0f) {
+            FireSoundInstance->FadeOut(0.15f, 0.f);
+
+        }
+    }
 }
 
 void AAmmoDrivenWeapon::RecieveStartUsing_Implementation()
@@ -216,11 +229,23 @@ void AAmmoDrivenWeapon::RecieveStartUsing_Implementation()
     if (AmmoCount == 0 && ClipCount == 0) {
         if (WeaponEmptySound) {
             UGameplayStatics::SpawnSoundAttached(WeaponEmptySound, this->FPMesh, TEXT("Muzzle"));
+            
         }
     }
 
     else if (ClipCount > 0) {
         OnWeaponFired(FVector(0.f));
+
+        
+        if (IsValid(FireSound)) {
+            UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(FireSound->GetDuration()), true, true, FColor::Cyan, 5.f);
+            if (FireSound->GetDuration() == 10000.0f) {
+                FireSoundInstance->SetFloatParameter(TEXT("RateOfFire"), RateOfFire);
+                FireSoundInstance->SetSound(FireSound);
+                FireSoundInstance->Play();
+
+            }     
+        }
     }
 }
 
@@ -328,8 +353,9 @@ AAmmoDrivenWeapon::AAmmoDrivenWeapon() {
     this->HasAutomaticFire = false;
     this->IsFiring = false;
     this->WeaponState = EAmmoWeaponState::Equipping;
-
-
+    this->FireSoundInstance = CreateDefaultSubobject<UAudioComponent>(TEXT("SceneComponent"));
+    this->FireSoundInstance->SetVolumeMultiplier(1.f);
+    this->FireSoundInstance->AttachToComponent(FPMesh, FAttachmentTransformRules::SnapToTargetIncludingScale);
 }
 
 
