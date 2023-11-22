@@ -33,7 +33,11 @@ UCLASS(Abstract, Blueprintable)
 class AAmmoDrivenWeapon : public AAnimatedItem, public IWeaponFireOwner, public IUpgradable, public IUpgradableGear, public IRejoinListener {
     GENERATED_BODY()
 public:
-
+    bool GetFiring();
+    int GetCurrentClipCount();
+    int GetMaxClipCount();
+    int GetCurrentMaxAmmoCount();
+    int GetMaxAmmoCount();
     FTimerHandle FireWaitHandle;
     void StopFireWaitTimer();
 

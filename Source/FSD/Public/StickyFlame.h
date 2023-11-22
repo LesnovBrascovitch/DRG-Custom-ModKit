@@ -13,6 +13,13 @@ UCLASS(Blueprintable)
 class AStickyFlame : public AActor {
     GENERATED_BODY()
 public:
+    FTimerHandle ExtinguishHandle;
+    FTimerHandle DamageRateHandle;
+
+    virtual void BeginPlay() override;
+
+
+
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* FlameParticles;

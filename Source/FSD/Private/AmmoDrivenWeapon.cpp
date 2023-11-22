@@ -22,6 +22,9 @@
 #include "NiagaraComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
+bool AAmmoDrivenWeapon::GetFiring() {
+    return IsFiring;
+}
 
 void AAmmoDrivenWeapon::BeginPlay() {
     Super::BeginPlay();
@@ -97,6 +100,7 @@ void AAmmoDrivenWeapon::OnWeaponFired(const FVector& Location) {
             if (IsValid(Character)) {
                 UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
                 if (IsValid(InvComp)) {
+                    IsFiring = true;
                     UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
 
                     //Play Dwarf's FP Animation if valid
@@ -164,6 +168,8 @@ void AAmmoDrivenWeapon::OnWeaponFired(const FVector& Location) {
     }
 
     if (ClipCount == 0) {
+        IsFiring = false;
+
         if (WeaponEmptySound) {
             UGameplayStatics::SpawnSoundAttached(WeaponEmptySound, this->FPMesh, TEXT("Muzzle"));
         }
@@ -210,8 +216,29 @@ void AAmmoDrivenWeapon::All_Gunsling_Implementation(uint8 Index) {
 
 void AAmmoDrivenWeapon::RecieveStopUsing_Implementation()
 {
-    UKismetSystemLibrary::PrintString(this, "[C++] AmmoDrivenWeapon - RecieveStopUsing", true, true, FColor::Cyan, 2.f);
+    Super::RecieveStopUsing_Implementation();
     IsFiring = false;
+    IsUsing = false;
+
+    if (IsValid(Character)) {
+        UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
+        if (IsValid(InvComp)) {
+            UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
+
+            //Play Dwarf's FP Animation if valid
+            if (IsValid(FP_FireAnimation)) {
+                FPAnim->UAnimInstance::StopAllMontages(0.1f);
+                //FPAnim->UAnimInstance::Montage_Play(FP_FireAnimation);
+            }
+
+            //Play WPN's FP Animation if valid
+            if (IsValid(WPN_Fire)) {
+                this->FPMesh->GetAnimInstance()->UAnimInstance::StopAllMontages(0.1f);
+                //this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(WPN_Fire);
+            }
+        }
+    }
+    UKismetSystemLibrary::PrintString(this, "[C++] AmmoDrivenWeapon - RecieveStopUsing", true, true, FColor::Cyan, 2.f);
 
     if (IsValid(FireSound)) {
         if (FireSound->GetDuration() == 10000.0f) {
@@ -224,7 +251,8 @@ void AAmmoDrivenWeapon::RecieveStopUsing_Implementation()
 void AAmmoDrivenWeapon::RecieveStartUsing_Implementation()
 {
     UKismetSystemLibrary::PrintString(this, "[C++] AmmoDrivenWeapon - RecieveStartUsing", true, true, FColor::Cyan, 2.f);
-    IsFiring = true;
+    
+    IsUsing = true;
 
     if (AmmoCount == 0 && ClipCount == 0) {
         if (WeaponEmptySound) {
@@ -234,6 +262,7 @@ void AAmmoDrivenWeapon::RecieveStartUsing_Implementation()
     }
 
     else if (ClipCount > 0) {
+        IsFiring = true;
         OnWeaponFired(FVector(0.f));
 
         
@@ -286,6 +315,26 @@ void AAmmoDrivenWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(AAmmoDrivenWeapon, WPN_Reload);
     DOREPLIFETIME(AAmmoDrivenWeapon, ClipCount);
     DOREPLIFETIME(AAmmoDrivenWeapon, IsFiring);
+}
+
+int AAmmoDrivenWeapon::GetCurrentClipCount()
+{
+    return ClipCount;
+}
+
+int AAmmoDrivenWeapon::GetMaxClipCount()
+{
+    return ClipSize;
+}
+
+int AAmmoDrivenWeapon::GetCurrentMaxAmmoCount()
+{
+    return AmmoCount;
+}
+
+int AAmmoDrivenWeapon::GetMaxAmmoCount()
+{
+    return MaxAmmo;
 }
 
 void AAmmoDrivenWeapon::StopFireWaitTimer()

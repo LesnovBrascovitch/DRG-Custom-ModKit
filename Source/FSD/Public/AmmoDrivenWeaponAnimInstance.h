@@ -9,6 +9,7 @@ UCLASS(Blueprintable, NonTransient)
 class UAmmoDrivenWeaponAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
+    virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AAmmoDrivenWeapon* Weapon;
