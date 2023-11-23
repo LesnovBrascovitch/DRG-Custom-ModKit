@@ -2,9 +2,14 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
+void AGrenade::BeginPlay() {
+    Super::BeginPlay();
+    GetWorld()->GetTimerManager().SetTimer(ExplodeTimeHandle, this, &AGrenade::OnExploded, cookTime, false);
+}
 
 void AGrenade::OnRep_HasExploded() {
 }
+
 
 
 bool AGrenade::IsNonFriendlyPawn(AActor* Actor) const {

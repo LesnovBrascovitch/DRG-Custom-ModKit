@@ -1,6 +1,7 @@
 #include "DamageComponent.h"
 #include "Templates/SubclassOf.h"
 #include "HealthComponentBase.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 void UDamageComponent::PreTestDamageConditions() {
 }
@@ -21,6 +22,33 @@ void UDamageComponent::DamageTargetFromHit(const FHitResult& HitResult) const {
             
             HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
         }
+    }
+
+    
+
+    if (UseAreaOfEffect == true) {
+        TArray<AActor*> OutActors;
+
+        TArray<AActor*> ActorToIgnore;
+
+        TArray<TEnumAsByte<EObjectTypeQuery>> traceObjectTypes;
+        traceObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_Pawn));
+        traceObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_WorldDynamic));
+
+        
+        UKismetSystemLibrary::SphereOverlapActors(GetWorld(), HitResult.Location, DamageRadius, traceObjectTypes, AActor::StaticClass(), ActorToIgnore, OutActors);
+        
+        for (AActor* HitActor: OutActors) {
+            if (IsValid(HitActor)) {
+                UHealthComponentBase* HealthComp = HitActor->FindComponentByClass<UHealthComponentBase>();
+                if (IsValid(HealthComp)) {
+                    HealthComp->TakeDamageSimple(RadialDamage, NULL, RadialDamageClass);
+                    UE_LOG(LogTemp, Log, TEXT("%s got damaged with %f"), *HitActor->GetName(), RadialDamage);
+                }
+            }
+        }
+
+        
     }
 }
 

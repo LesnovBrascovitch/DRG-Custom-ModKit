@@ -7,6 +7,8 @@
 
 void AStickyFlame::BeginPlay() {
     Super::BeginPlay();
+    
+
     GetWorld()->GetTimerManager().SetTimer(ExtinguishHandle, this, &AStickyFlame::OnExtinguisFlame, FlameExtinguishTime, false);
 
     SetLifeSpan(FlameLifetime);
