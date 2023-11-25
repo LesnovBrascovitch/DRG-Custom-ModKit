@@ -9,6 +9,7 @@ UCLASS(Blueprintable)
 class UUseAnimationSetting : public UDataAsset {
     GENERATED_BODY()
 public:
+    UAnimMontage* GetBeginFPMontage();
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimMontage* BeginFP;

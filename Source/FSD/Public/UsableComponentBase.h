@@ -88,7 +88,7 @@ public:
     void EndUse(APlayerCharacter* User);
     
     UFUNCTION(BlueprintCallable)
-    void BeginUse(APlayerCharacter* User, EInputKeys Key);
+    virtual void BeginUse(APlayerCharacter* User, EInputKeys Key);
     
 };
 

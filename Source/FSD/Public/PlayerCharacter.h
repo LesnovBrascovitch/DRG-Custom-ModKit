@@ -63,6 +63,8 @@
 #include "ThrowCarriableDelegateDelegate.h"
 #include "ToggleMapToolSignatureDelegate.h"
 #include "UpdateMeshesSignatureDelegate.h"
+
+#include "UsableComponentBase.h"
 #include "PlayerCharacter.generated.h"
 
 class AActor;
@@ -145,17 +147,22 @@ public:
     FTimerHandle timerHandle;
     FTimerHandle LedgeHiddenItemHandle;
 
+
+
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FKilledGrabber, AActor*, Grabber);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUseDelegate, AItem*, Item);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGenericAnimNotifyDelegate, APlayerCharacter*, Player);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFirePressedDelegate);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCanEscapeGrabberDelegate, bool, bCanEscape);
     
+    virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
     virtual void Tick(float DeltaSeconds) override;
-
+    virtual void BeginPlay() override;
+    UUsableComponentBase* CurrentUsableComponent;
     void TimerJump();
     void LedgeShowItem();
-
+    void StartUse();
+    void StopUse();
 
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FItemUseDelegate OnStartedUsingItem;

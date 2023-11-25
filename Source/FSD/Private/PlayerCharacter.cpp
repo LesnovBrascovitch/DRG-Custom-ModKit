@@ -36,7 +36,6 @@
 #include "item.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/Controller.h"
-
 #include "GameFramework/PlayerState.h"
 #include "FSDPlayerState.h"
 #include "GameFramework/PlayerController.h"
@@ -578,9 +577,67 @@ void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(APlayerCharacter, PlayerIsLeavingInDroppod);
 }
 
+void APlayerCharacter::StartUse() {
+    UKismetSystemLibrary::PrintString(this, TEXT("PlayerCharacter - StartUse"), true, true, FColor::Green, 2.f);
+    if (IsValid(CurrentUsableComponent)) {
+        CurrentUsableComponent->BeginUse(this, EInputKeys::Use);
+    }
+}
+
+void APlayerCharacter::StopUse()
+{
+    UKismetSystemLibrary::PrintString(this, TEXT("PlayerCharacter - StopUse"), true, true, FColor::Green, 2.f);
+}
+
+void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* InputComponent)
+{
+    // Always call this.
+    Super::SetupPlayerInputComponent(InputComponent);
+
+    // This component belongs to the possessing Player Controller
+
+    InputComponent->BindAction("Use", IE_Pressed, this, &APlayerCharacter::StartUse);
+    InputComponent->BindAction("Use", IE_Released, this, &APlayerCharacter::StopUse);
+}
+
+void APlayerCharacter::BeginPlay() {
+    Super::BeginPlay();
+
+}
+
 void APlayerCharacter::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
+
+    //Usable
+    FHitResult UsableTrace;
+
+    FCollisionQueryParams UsableCollisionParameters;
+    UsableCollisionParameters.bTraceComplex = true;
+    UsableCollisionParameters.bReturnPhysicalMaterial = true;
+    UsableCollisionParameters.AddIgnoredActor(this);
+
+    FVector OriginLocation = FirstPersonCamera->GetComponentLocation();
+    FVector TargetLocation = OriginLocation + (FirstPersonCamera->GetForwardVector() * 500);
+
+    GetWorld()->LineTraceSingleByChannel(UsableTrace, OriginLocation, TargetLocation, ECC_GameTraceChannel3, UsableCollisionParameters);
+    DrawDebugLine(GetWorld(), TargetLocation, OriginLocation, UsableTrace.bBlockingHit ? FColor::Blue : FColor::Red, false, 0.0f, 0, 1.f);
+
+    AActor* UsableHitActor = UsableTrace.GetActor();
+
+    if (IsValid(UsableHitActor)) {
+        UKismetSystemLibrary::PrintString(this, (TEXT("Usable Hit Actor %s"), UsableHitActor->GetName()), true, true, FColor::Green, 0.f);
+        CurrentUsableComponent = UsableHitActor->FindComponentByClass<UUsableComponentBase>();
+        if (IsValid(CurrentUsableComponent)) {
+            UKismetSystemLibrary::PrintString(this, (TEXT("Usable Base From HitActor %s"), CurrentUsableComponent->GetName()), true, true, FColor::Green, 0.f);
+        }
+    }
+    else {
+        UKismetSystemLibrary::PrintString(this, (TEXT("Usable Hit Actor - None")), true, true, FColor::Red, 0.f);
+    }
+
+
+    //Ledge
 
     float MoveForwardAxis = GetInputAxisValue(TEXT("MoveForward"));
     float MoveRightAxis = GetInputAxisValue(TEXT("MoveRight"));
@@ -592,11 +649,9 @@ void APlayerCharacter::Tick(float DeltaSeconds)
     AddMovementInput(MovementValue);
     AddControllerYawInput(TurnRate);
 
-    UKismetSystemLibrary::PrintString(this, "[C++] PlayerCharacter Tick", true, true, FColor::Green, 0.f);
-
     AFSDPlayerController* PlayerController = GetPlayerController();
 
-    UKismetSystemLibrary::PrintString(this, "[C++] PlayerCharacter Tick - Ledge Timer " + GetWorldTimerManager().IsTimerActive(timerHandle) ? TEXT("true") : TEXT("false"), true, true, FColor::Green, 0.f);
+    UKismetSystemLibrary::PrintString(this, "[C++] PlayerCharacter Tick - Ledge Timer " + GetWorldTimerManager().IsTimerActive(timerHandle) ? TEXT("Ledge Timer Active") : TEXT("Ledge Timer Not Active"), true, true, FColor::Green, 0.f);
    
     if(GetWorldTimerManager().IsTimerActive(timerHandle) == false){
         if (IsValid(PlayerController)) {

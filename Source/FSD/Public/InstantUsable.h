@@ -11,6 +11,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UInstantUsable : public UUsableComponent {
     GENERATED_BODY()
 public:
+    virtual void BeginUse(APlayerCharacter* User, EInputKeys Key);
+
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUsedBySignature OnUsedBy;
     
