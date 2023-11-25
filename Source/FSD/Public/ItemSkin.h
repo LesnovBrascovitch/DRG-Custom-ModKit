@@ -55,6 +55,8 @@ protected:
     UPlayerCharacterID* OwningCharacter;
     
 public:
+    USkinEffect* GetSkinEffect();
+
     UItemSkin();
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContext"))
     bool Unlock(UObject* WorldContext, UItemID* ItemID, bool broadcast);

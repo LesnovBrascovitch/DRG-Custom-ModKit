@@ -107,6 +107,7 @@ UUserWidget* UFSDWidgetBlueprintLibrary::GetParentUserWidget(UUserWidget* InWidg
 }
 
 AFSDPlayerState* UFSDWidgetBlueprintLibrary::GetOwningFSDPlayerState(UWidget* Target) {
+    
     return NULL;
 }
 

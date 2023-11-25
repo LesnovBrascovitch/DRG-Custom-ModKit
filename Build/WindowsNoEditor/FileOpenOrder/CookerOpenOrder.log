@@ -1,33 +1,33 @@
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_GenericHeroInventory.uasset" 0
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_GenericHeroInventory.uexp" 1
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/UPlayerArmorRegenCurve.uasset" 2
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/UPlayerArmorRegenCurve.uexp" 3
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/Curve_Controller_DualZone.uasset" 4
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/Curve_Controller_DualZone.uexp" 5
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_TP_Dwarf.uasset" 6
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_TP_Dwarf.uexp" 7
-"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 8
-"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uexp" 9
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_FP_Dwarf.uasset" 10
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_FP_Dwarf.uexp" 11
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uasset" 12
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uexp" 13
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.ubulk" 14
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uasset" 15
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uexp" 16
-"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.ubulk" 17
-"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uasset" 18
-"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uexp" 19
-"../../../Engine/Content/EngineMaterials/DefaultMaterial.uasset" 20
-"../../../Engine/Content/EngineMaterials/DefaultMaterial.uexp" 21
-"../../../Engine/Content/BasicShapes/Sphere.uasset" 22
-"../../../Engine/Content/BasicShapes/Sphere.uexp" 23
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_PlayerCharacter.uasset" 24
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_PlayerCharacter.uexp" 25
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_BoscoInventory.uasset" 26
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_BoscoInventory.uexp" 27
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BoscoID.uasset" 28
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BoscoID.uexp" 29
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_BoscoInventory.uasset" 0
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_BoscoInventory.uexp" 1
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BoscoID.uasset" 2
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BoscoID.uexp" 3
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_TP_Dwarf.uasset" 4
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_TP_Dwarf.uexp" 5
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 6
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uexp" 7
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_FP_Dwarf.uasset" 8
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/ABP_FP_Dwarf.uexp" 9
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_GenericHeroInventory.uasset" 10
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/InventoryLists/BP_GenericHeroInventory.uexp" 11
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/UPlayerArmorRegenCurve.uasset" 12
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/UPlayerArmorRegenCurve.uexp" 13
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/Curve_Controller_DualZone.uasset" 14
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/Curve_Controller_DualZone.uexp" 15
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uasset" 16
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uexp" 17
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.ubulk" 18
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uasset" 19
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uexp" 20
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.ubulk" 21
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uasset" 22
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uexp" 23
+"../../../Engine/Content/EngineMaterials/DefaultMaterial.uasset" 24
+"../../../Engine/Content/EngineMaterials/DefaultMaterial.uexp" 25
+"../../../Engine/Content/BasicShapes/Sphere.uasset" 26
+"../../../Engine/Content/BasicShapes/Sphere.uexp" 27
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_PlayerCharacter.uasset" 28
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_PlayerCharacter.uexp" 29
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_Bosco_Character.uasset" 30
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/BP_Bosco_Character.uexp" 31
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/Character/DrillerID.uasset" 32
@@ -167,14 +167,14 @@
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/UI_TG_Button_Actor.uexp" 166
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/Menu_TG_ActorEditing.uasset" 167
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/Menu_TG_ActorEditing.uexp" 168
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_PlayerAnimInstance.uasset" 169
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_PlayerAnimInstance.uexp" 170
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_HitScanBase.uasset" 171
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_HitScanBase.uexp" 172
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ComponentExtension/Panel_TG_CapsuleCollision.uasset" 173
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ComponentExtension/Panel_TG_CapsuleCollision.uexp" 174
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_Item.uasset" 175
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_Item.uexp" 176
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_Item.uasset" 169
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_Item.uexp" 170
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_PlayerAnimInstance.uasset" 171
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_PlayerAnimInstance.uexp" 172
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_HitScanBase.uasset" 173
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/_DRGOnly/Panel_TG__AEM_AE_DRG_HitScanBase.uexp" 174
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ComponentExtension/Panel_TG_CapsuleCollision.uasset" 175
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ComponentExtension/Panel_TG_CapsuleCollision.uexp" 176
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_AnimatedItem.uasset" 177
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_AnimatedItem.uexp" 178
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/_TestingGround/Menu/ActorEditingMenu/PanelMenu/ActorExtension/Panel_TG__AEM_AE_DRG_AmmoDrivenWeapon.uasset" 179
@@ -871,10 +871,10 @@
 "../../../Engine/Plugins/Runtime/WebBrowserWidget/Content/WebTexture_M.uexp" 870
 "../../../Engine/Plugins/Runtime/WebBrowserWidget/Content/WebTexture_TM.uasset" 871
 "../../../Engine/Plugins/Runtime/WebBrowserWidget/Content/WebTexture_TM.uexp" 872
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uasset" 873
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uexp" 874
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uasset" 875
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uexp" 876
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uasset" 873
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uexp" 874
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uasset" 875
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uexp" 876
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_ChromaKey.uasset" 877
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_ChromaKey.uexp" 878
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_OpaqueColoredMaterial.uasset" 879
@@ -904,54 +904,54 @@
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Meshes/RightTouchController.uexp" 903
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Meshes/RightTouchForQuestRiftSController.uasset" 904
 "../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Meshes/RightTouchForQuestRiftSController.uexp" 905
-"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 906
-"../../../Engine/Content/EngineSky/T_Sky_Stars.uexp" 907
-"../../../Engine/Content/EngineSky/T_Sky_Stars.ubulk" 908
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 909
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uexp" 910
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.ubulk" 911
-"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 912
-"../../../Engine/Content/EngineSky/T_Sky_Blue.uexp" 913
-"../../../Engine/Content/EngineSky/T_Sky_Blue.ubulk" 914
-"../../../Engine/Content/BasicShapes/Cube.uasset" 915
-"../../../Engine/Content/BasicShapes/Cube.uexp" 916
-"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 917
-"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uexp" 918
-"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uasset" 919
-"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uexp" 920
-"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 921
-"../../../Engine/Content/EngineSky/SM_SkySphere.uexp" 922
-"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 923
-"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uexp" 924
-"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 925
-"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uexp" 926
-"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 927
-"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uexp" 928
-"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 929
-"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uexp" 930
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst2.uasset" 931
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst2.uexp" 932
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst1.uasset" 933
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst1.uexp" 934
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor.uasset" 935
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor.uexp" 936
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BPE_CrosshairTesting.uasset" 937
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BPE_CrosshairTesting.uexp" 938
-"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uasset" 939
-"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uexp" 940
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst2.uasset" 906
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst2.uexp" 907
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst1.uasset" 908
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/GridMaterial/M_Grid_World_Inst1.uexp" 909
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor.uasset" 910
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor.uexp" 911
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BPE_CrosshairTesting.uasset" 912
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BPE_CrosshairTesting.uexp" 913
+"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uasset" 914
+"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uexp" 915
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 916
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uexp" 917
+"../../../Engine/Content/EngineSky/T_Sky_Stars.ubulk" 918
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 919
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uexp" 920
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.ubulk" 921
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 922
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uexp" 923
+"../../../Engine/Content/EngineSky/T_Sky_Blue.ubulk" 924
+"../../../Engine/Content/BasicShapes/Cube.uasset" 925
+"../../../Engine/Content/BasicShapes/Cube.uexp" 926
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 927
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uexp" 928
+"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uasset" 929
+"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uexp" 930
+"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 931
+"../../../Engine/Content/EngineSky/SM_SkySphere.uexp" 932
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 933
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uexp" 934
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 935
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uexp" 936
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 937
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uexp" 938
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 939
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uexp" 940
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/Level/LVL_UserLevel.uexp" 941
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/Level/LVL_UserLevel.umap" 942
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor_Child.uasset" 943
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor_Child.uexp" 944
-"../../../Engine/Content/EngineResources/DefaultTexture.uasset" 945
-"../../../Engine/Content/EngineResources/DefaultTexture.uexp" 946
-"../../../Engine/Content/EngineResources/DefaultTexture.ubulk" 947
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/M_ProtoLockOnRifle_Default.uasset" 948
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/M_ProtoLockOnRifle_Default.uexp" 949
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/IDAT_AssaultRifleClass.uasset" 950
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/IDAT_AssaultRifleClass.uexp" 951
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/WPN_AssaultRifleClass.uasset" 952
-"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/WPN_AssaultRifleClass.uexp" 953
+"../../../Engine/Content/EngineResources/DefaultTexture.uasset" 943
+"../../../Engine/Content/EngineResources/DefaultTexture.uexp" 944
+"../../../Engine/Content/EngineResources/DefaultTexture.ubulk" 945
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/M_ProtoLockOnRifle_Default.uasset" 946
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/M_ProtoLockOnRifle_Default.uexp" 947
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/IDAT_AssaultRifleClass.uasset" 948
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/IDAT_AssaultRifleClass.uexp" 949
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/WPN_AssaultRifleClass.uasset" 950
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_DRGModding/_LesnovMods/__Testing__/WeaponTesting/WPN_AssaultRifleClass.uexp" 951
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor_Child.uasset" 952
+"C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/BP_Gamemode_InEditor_Child.uexp" 953
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/Level/LVL_UserLevel_PlayerOnly.uexp" 954
 "C:/Users/81705/Documents/Unreal Projects/DRGModkitU38P7/Content/_InEditorTesting/Level/LVL_UserLevel_PlayerOnly.umap" 955
 "../../../Engine/Content/Maps/Entry_BuiltData.uasset" 956

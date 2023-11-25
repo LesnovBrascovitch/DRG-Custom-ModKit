@@ -35,6 +35,13 @@
 #include "TimerManager.h"
 #include "item.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/Controller.h"
+
+#include "GameFramework/PlayerState.h"
+#include "FSDPlayerState.h"
+#include "GameFramework/PlayerController.h"
+#include "PlayerFPAnimInstance.h"
+
 
 void APlayerCharacter::UseZipLine(AZipLineProjectile* ZipLine, const FVector& Start, const FVector& End) {
 }
@@ -365,6 +372,15 @@ ECharacterState APlayerCharacter::GetPreviousState() const {
 }
 
 AFSDPlayerState* APlayerCharacter::GetPlayerState() const {
+    APlayerController* ObtainedPlayerController = Cast<APlayerController>(GetController());
+    if (IsValid(ObtainedPlayerController)) {
+        AFSDPlayerState* ObtainedPlayerState = ObtainedPlayerController->GetPlayerState<AFSDPlayerState>();
+        return ObtainedPlayerState;
+    }
+    else {
+        return NULL;
+    }
+    
     return NULL;
 }
 

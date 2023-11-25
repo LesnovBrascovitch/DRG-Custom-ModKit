@@ -1,4 +1,11 @@
 #include "SkinnableComponent.h"
+#include "FSDPlayerState.h"
+#include "PlayerCharacter.h"
+#include "Item.h"
+#include "InventoryComponent.h"
+#include "ItemID.h"
+#include "ItemSkin.h"
+#include "SkinEffect.h"
 
 void USkinnableComponent::UpdateSkin(AFSDPlayerState* Player) {
 }
@@ -35,6 +42,42 @@ UItemSkin* USkinnableComponent::GetBaseColorSkinForMeshSkin(UItemID* ItemID, UIt
 }
 
 void USkinnableComponent::EquipSkin(UItemSkin* Skin, UItemID* ItemID, AFSDPlayerState* Player) {
+    UE_LOG(LogTemp, Log, TEXT("EquipSkin - Started Logic"));
+    
+    if (IsValid(Player) && IsValid(Skin) && IsValid(ItemID)) {
+        APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(Player->GetPawn());
+        if (IsValid(PlayerCharacter)) {
+            UInventoryComponent* InvComp = PlayerCharacter->FindComponentByClass<UInventoryComponent>();
+            if (IsValid(InvComp)) {
+                TArray<AActor*> AllItems = InvComp->GetAllItems();
+
+                for (AActor* item : AllItems) {
+                    if (IsValid(item)) {
+                        AItem* CastedItem = Cast<AItem>(item);
+                        if (IsValid(CastedItem)) {
+                            if (CastedItem->GetClass() == ItemID->GetItemClass()) {
+                                CastedItem->OnSkinChanged(Cast<USkinEffect>(Skin->GetSkinEffect()));
+                                UE_LOG(LogTemp, Log, TEXT("EquipSkin - OnSkinChanged to %s"), *CastedItem->GetName());
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            else {
+                UE_LOG(LogTemp, Error, TEXT("EquipSkin - Finding for InventoryComponent failed"));
+            }
+        }
+        else {
+            UE_LOG(LogTemp, Error, TEXT("EquipSkin - Cast to APlayerCharacter from Player failed"));
+        }
+
+    }
+    else {
+            UE_LOG(LogTemp, Error, TEXT("EquipSkin - Player, Skin, ItemID Invalid"));
+    }
+    
 }
 
 USkinnableComponent::USkinnableComponent() {

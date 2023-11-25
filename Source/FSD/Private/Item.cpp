@@ -6,6 +6,10 @@
 #include "InventoryComponent.h"
 #include "Engine/EngineTypes.h"
 #include <Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h>
+#include "Skinnable.h"
+void AItem::OnSkinChanged_Implementation(USkinEffect* Skin) {
+
+}
 
 void AItem::UpdateSkin() {
 }
@@ -32,6 +36,7 @@ UFirstPersonStaticMeshComponent* AItem::GetFPAnimationEventMesh()
 {
     return Receive_GetFPAnimationEventMesh();
 }
+
 
 
 void AItem::OnRep_IsUsing(bool OldValue) {

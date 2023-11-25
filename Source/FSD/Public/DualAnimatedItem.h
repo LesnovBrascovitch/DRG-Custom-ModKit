@@ -13,6 +13,8 @@ UCLASS(Abstract, Blueprintable)
 class ADualAnimatedItem : public AItem {
     GENERATED_BODY()
 public:
+    virtual void OnSkinChanged_Implementation(USkinEffect* Skin);
+
     virtual UItemCharacterAnimationSet* GetCharacterAnimationSet_Implementation() override;
 
     void RecieveEquipped();

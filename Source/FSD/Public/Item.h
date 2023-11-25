@@ -148,7 +148,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UFUNCTION(BlueprintCallable)
-    void UpdateSkin();
+    virtual void UpdateSkin();
     
     UFUNCTION(BlueprintCallable)
     UAudioComponent* SpawnSoundAttached(USoundBase* Sound, USceneComponent* AttachToComponent, float PriorityOverride, FName AttachPointName, FVector Location, FRotator Rotation, TEnumAsByte<EAttachLocation::Type> LocationType, bool bStopWhenAttachedToDestroyed, float VolumeMultiplier, float PitchMultiplier, float StartTime, USoundAttenuation* AttenuationSettings, USoundConcurrency* ConcurrencySettings, bool bAutoDestroy, bool SendVibration);
@@ -212,8 +212,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTemperatureChanged(float Temperature, bool NewOverHeated);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnSkinChanged(USkinEffect* Skin);
+    virtual void OnSkinChanged_Implementation(USkinEffect* Skin);
     
 protected:
     UFUNCTION(BlueprintCallable)

@@ -311,7 +311,8 @@ protected:
     void OnWeaponFireEnded();
     
     UFUNCTION(BlueprintCallable)
-    void OnWeaponFired(const FVector& Location);
+    virtual void OnWeaponFired(const FVector& Location);
+
     
     UFUNCTION(BlueprintCallable)
     void OnRicochet(const FVector& Origin, const FVector& Location, const FVector& Normal);

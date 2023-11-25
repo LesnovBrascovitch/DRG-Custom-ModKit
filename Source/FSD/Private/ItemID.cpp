@@ -10,7 +10,8 @@ UItemData* UItemID::GetItemData() const {
 }
 
 TSubclassOf<AItem> UItemID::GetItemClass() const {
-    return NULL;
+    TSubclassOf<AItem> ItemClass = Item.Get();
+    return ItemClass;
 }
 
 EItemCategory UItemID::GetItemCategory() const {

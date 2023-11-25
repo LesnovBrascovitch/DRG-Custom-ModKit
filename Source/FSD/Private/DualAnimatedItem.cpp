@@ -10,6 +10,11 @@
 #include "PlayerFPAnimInstance.h"
 #include "ItemCharacterAnimationSet.h"
 
+void ADualAnimatedItem::OnSkinChanged_Implementation(USkinEffect* Skin) {
+    Super::OnSkinChanged_Implementation(Skin);
+
+}
+
 UItemCharacterAnimationSet* ADualAnimatedItem::GetCharacterAnimationSet_Implementation()
 {
     return this->CharacterAnimationSet;

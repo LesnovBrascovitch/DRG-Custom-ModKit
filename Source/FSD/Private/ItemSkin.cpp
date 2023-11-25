@@ -42,6 +42,11 @@ UMaterialInstanceDynamic* UItemSkin::CreateIcon(UObject* Owner) const {
     return NULL;
 }
 
+USkinEffect* UItemSkin::GetSkinEffect()
+{
+    return SkinEffect;
+}
+
 UItemSkin::UItemSkin() {
     this->Aquisition = NULL;
     this->SkinSet = NULL;

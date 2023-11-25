@@ -23,7 +23,7 @@ TArray<AActor*> UInventoryBase::GetSelectableActors() const {
 }
 
 TArray<AActor*> UInventoryBase::GetAllItems() const {
-    return TArray<AActor*>();
+    return TArray<AActor*>(ActorsSelectable);
 }
 
 void UInventoryBase::EquipPrevious() {

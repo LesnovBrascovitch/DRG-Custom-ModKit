@@ -9,6 +9,26 @@
 #include "Animation/AnimInstance.h"
 #include "PlayerFPAnimInstance.h"
 #include "ItemCharacterAnimationSet.h"
+#include "Skinnable.h"
+#include "SkinEffect.h"
+#include "SkeletalMeshSkinEffect.h"
+
+void AAnimatedItem::OnSkinChanged_Implementation(USkinEffect* Skin) {
+    if (IsValid(Skin)) {
+        USkeletalMeshSkinEffect* SkeletalSkinEffect = Cast<USkeletalMeshSkinEffect>(Skin);
+        if (IsValid(SkeletalSkinEffect)) {
+            USkeletalMesh* LoadedSkin = SkeletalSkinEffect->LoadMesh();
+            if (IsValid(LoadedSkin)) {
+                
+                FPMesh->SetSkeletalMesh(LoadedSkin);
+            }
+        }
+    }
+}
+
+void AAnimatedItem::UpdateSkin() {
+
+}
 
 FTransform AAnimatedItem::GetMuzzle() const {
     return FTransform{};

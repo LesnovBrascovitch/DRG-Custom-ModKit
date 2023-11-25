@@ -15,6 +15,9 @@ UCLASS(Abstract, Blueprintable)
 class AAnimatedItem : public AItem {
     GENERATED_BODY()
 public:
+    virtual void OnSkinChanged_Implementation(USkinEffect* Skin);
+
+    virtual void UpdateSkin();
 
     UItemCharacterAnimationSet* GetCharacterAnimationSet();
     virtual UItemCharacterAnimationSet* AAnimatedItem::GetCharacterAnimationSet_Implementation() override;
