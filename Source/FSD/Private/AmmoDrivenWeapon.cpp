@@ -47,6 +47,7 @@ void AAmmoDrivenWeapon::Server_StopReload_Implementation(float BlendOutTime) {
 
 void AAmmoDrivenWeapon::Server_ReloadWeapon_Implementation() {
     if (AmmoCount > 0) {
+        UE_LOG(LogTemp, Log, TEXT("Server_ReloadWeapon_Implementation"), *this->GetName());
         int32 AmmoToReload = FMath::Min((ClipSize - ClipCount), AmmoCount);
 
         ClipCount += AmmoToReload;
@@ -224,17 +225,19 @@ void AAmmoDrivenWeapon::RecieveStopUsing_Implementation()
         UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
         if (IsValid(InvComp)) {
             UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
-
+            if (HasAutomaticFire) {
             //Play Dwarf's FP Animation if valid
-            if (IsValid(FP_FireAnimation)) {
-                FPAnim->UAnimInstance::StopAllMontages(0.1f);
-                //FPAnim->UAnimInstance::Montage_Play(FP_FireAnimation);
-            }
+                if (IsValid(FP_FireAnimation)) {
+                    FPAnim->UAnimInstance::StopAllMontages(0.1f);
+                    //FPAnim->UAnimInstance::Montage_Play(FP_FireAnimation);
+                }
 
             //Play WPN's FP Animation if valid
-            if (IsValid(WPN_Fire)) {
-                this->FPMesh->GetAnimInstance()->UAnimInstance::StopAllMontages(0.1f);
-                //this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(WPN_Fire);
+            
+                if (IsValid(WPN_Fire)) {
+                    this->FPMesh->GetAnimInstance()->UAnimInstance::StopAllMontages(0.1f);
+                    //this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(WPN_Fire);
+                }
             }
         }
     }
