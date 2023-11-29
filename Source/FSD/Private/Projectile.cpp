@@ -16,6 +16,10 @@ AProjectileBase* AProjectile::SpawnBallisticProjectile(UObject* WorldContextObje
 }
 
 void AProjectile::SetHomingTargetComponent(USceneComponent* HomingTargetComponent, float Delay) {
+
+    if (IsValid(HomingTargetComponent)) {
+        MovementComponent->HomingTargetComponent = HomingTargetComponent;
+    }
 }
 
 void AProjectile::Server_DisableHoming_Implementation() {

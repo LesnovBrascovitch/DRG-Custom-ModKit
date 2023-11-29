@@ -66,21 +66,24 @@ void AAmmoDrivenWeapon::Server_PlayBurstFire_Implementation(uint8 shotCount) {
 void AAmmoDrivenWeapon::Server_Gunsling_Implementation(uint8 Index) {
     UKismetSystemLibrary::PrintString(this, "[C++] AmmoDrivenWeapon - Server_Gunsling", true, true, FColor::Cyan, 2.f);
 
-    int32 random = (GunslingAnimations.Num() - 1);
+    if (GunslingAnimations.IsValidIndex(0)) {
 
-    UAnimMontage* GunslingMontageFP = GunslingAnimations[FMath::RandRange(0, random)].FP_CharacterMontage;
-    UAnimMontage* GunslingMontageItem = GunslingAnimations[FMath::RandRange(0, random)].ItemMontage;
+        int32 random = (GunslingAnimations.Num() - 1);
 
-    if (IsValid(GunslingMontageFP)) {
-        UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
-        if (IsValid(InvComp)) {
-            UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
+        UAnimMontage* GunslingMontageFP = GunslingAnimations[FMath::RandRange(0, random)].FP_CharacterMontage;
+        UAnimMontage* GunslingMontageItem = GunslingAnimations[FMath::RandRange(0, random)].ItemMontage;
 
-            //Play Dwarf's gunsling anim [FPMesh]
-            FPAnim->UAnimInstance::Montage_Play(GunslingMontageFP,1.0f,EMontagePlayReturnType::Duration);
+        if (IsValid(GunslingMontageFP)) {
+            UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
+            if (IsValid(InvComp)) {
+                UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
 
-            if (IsValid(GunslingMontageItem)) {
-                this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(GunslingMontageItem, 1.0f, EMontagePlayReturnType::Duration);
+                //Play Dwarf's gunsling anim [FPMesh]
+                FPAnim->UAnimInstance::Montage_Play(GunslingMontageFP, 1.0f, EMontagePlayReturnType::Duration);
+
+                if (IsValid(GunslingMontageItem)) {
+                    this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(GunslingMontageItem, 1.0f, EMontagePlayReturnType::Duration);
+                }
             }
         }
     }

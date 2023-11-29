@@ -20,7 +20,10 @@ UCLASS(Abstract, Blueprintable)
 class AProjectile : public AProjectileBase {
     GENERATED_BODY()
 public:
+
+
 protected:
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_State, meta=(AllowPrivateAccess=true))
     FProjectileState State;
     
