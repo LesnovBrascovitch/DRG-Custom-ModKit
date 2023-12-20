@@ -19,9 +19,11 @@ void UInstantUsable::BeginUse(APlayerCharacter* User, EInputKeys Key) {
             }
         }
 
-        UAnimMontage* FPBeginMontage = AnimationSettings->GetBeginFPMontage();
-        if (IsValid(FPBeginMontage)) {
-            User->GetFPAnimInstance()->Montage_Play(FPBeginMontage);
+        if (IsValid(AnimationSettings)) {
+            UAnimMontage* FPBeginMontage = AnimationSettings->GetBeginFPMontage();
+            if (IsValid(FPBeginMontage)) {
+                User->GetFPAnimInstance()->Montage_Play(FPBeginMontage);
+            }
         }
 
         

@@ -10,6 +10,11 @@ void USimpleArmorDamageComponent::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(USimpleArmorDamageComponent, ArmorDamageInfo);
 }
 
+bool USimpleArmorDamageComponent::CanBeDestroyed(FName BoneName)
+{
+    return PhysBoneToArmor.Contains(BoneName);
+}
+
 USimpleArmorDamageComponent::USimpleArmorDamageComponent() {
     this->ArmorStrength = 10.00f;
 }

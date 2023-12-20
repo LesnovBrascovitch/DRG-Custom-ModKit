@@ -13,6 +13,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSimpleArmorRadialDamagedDelegate OnRadialArmorPartsDestroyedEvent;
     
+    bool CanBeDestroyed(FName BoneName);
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorStrength;

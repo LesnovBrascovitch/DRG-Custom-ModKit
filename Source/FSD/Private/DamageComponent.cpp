@@ -1,6 +1,7 @@
 #include "DamageComponent.h"
 #include "Templates/SubclassOf.h"
 #include "HealthComponentBase.h"
+#include "SimpleArmorDamageComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 void UDamageComponent::PreTestDamageConditions() {
@@ -18,9 +19,34 @@ void UDamageComponent::DamageTargetFromHit(const FHitResult& HitResult) const {
     AActor* HitActor = HitResult.GetActor();
     if (IsValid(HitActor)) {
         UHealthComponentBase* HealthComp = HitActor->FindComponentByClass<UHealthComponentBase>();
+        USimpleArmorDamageComponent* SimpleArmorComp = HitActor->FindComponentByClass<USimpleArmorDamageComponent>();
+
+        bool CanBeDamaged = true;
+
+        if (IsValid(SimpleArmorComp)) {
+            UE_LOG(LogTemp, Log, TEXT("SimpleArmorComp detected"));
+            if (SimpleArmorComp->CanBeDestroyed(HitResult.BoneName)) {
+                USkeletalMeshComponent* EnemyMesh = Cast<USkeletalMeshComponent>(HitResult.Component);
+                if (IsValid(EnemyMesh)) {
+                    
+                    EnemyMesh->HideBoneByName(HitResult.BoneName, EPhysBodyOp::PBO_None);
+                    CanBeDamaged = false;
+                    UE_LOG(LogTemp, Log, TEXT("Armor got destroyed"));
+
+                }
+                else {
+                    UE_LOG(LogTemp, Error, TEXT("EnemyMesh Invalid"));
+                }
+            }
+            else {
+                UE_LOG(LogTemp, Log, TEXT("SimpleArmorComp cannot be destroyed"));
+            }
+        }
+
         if (IsValid(HealthComp)) {
-            
-            HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
+            if (CanBeDamaged) {
+                HealthComp->TakeDamageSimple(Damage, NULL, DamageClass);
+            }
         }
     }
 

@@ -297,13 +297,15 @@ void AAmmoDrivenWeapon::RecieveCycledItem_Implementation()
             if (IsValid(InvComp)) {
                 UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
                 //FPAnim->UAnimInstance::Montage_Play();
+                
+                float PlayRate = FP_ReloadAnimation->GetPlayLength() / ReloadDuration;
 
                 Aggregator->OnReloadStarted.Broadcast();
                 
-                FPAnim->UAnimInstance::Montage_Play(FP_ReloadAnimation);
+                FPAnim->UAnimInstance::Montage_Play(FP_ReloadAnimation, PlayRate);
 
                 if (IsValid(WPN_Reload)) {
-                    this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(WPN_Reload);
+                    this->FPMesh->GetAnimInstance()->UAnimInstance::Montage_Play(WPN_Reload, PlayRate);
                 }
             }
         }
