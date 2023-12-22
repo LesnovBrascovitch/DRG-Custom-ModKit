@@ -6,6 +6,7 @@
 #include "EquippedActorData.h"
 #include "Math/Rotator.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "PickaxeItem.h"
 
 void UInventoryComponent::UpdateFromSaveGameInSlot(EItemCategory Category) {
 }
@@ -82,7 +83,10 @@ bool UInventoryComponent::EquipCategory(EItemCategory Category) {
 }
 
 void UInventoryComponent::Equip(AItem* Item) {
-
+    AItem* PreviousItem = Cast<AItem>(EquippedActor.Actor);
+    if (IsValid(PreviousItem)) {
+        OnItemUnequipped.Broadcast(PreviousItem);
+    }
 
     OnItemEquipped.Broadcast(Item);
 

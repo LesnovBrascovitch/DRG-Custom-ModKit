@@ -104,6 +104,7 @@ void AAmmoDrivenWeapon::OnWeaponFired(const FVector& Location) {
             if (IsValid(Character)) {
                 UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
                 if (IsValid(InvComp)) {
+                    OnShotFiredEvent.Broadcast();
                     IsFiring = true;
                     UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
 
@@ -295,6 +296,7 @@ void AAmmoDrivenWeapon::RecieveCycledItem_Implementation()
         if (IsValid(FP_ReloadAnimation) && IsValid(Character)) {
             UInventoryComponent* InvComp = Cast<UInventoryComponent>(Character->GetComponentByClass(UInventoryComponent::StaticClass()));
             if (IsValid(InvComp)) {
+                OnReloadingEvent.Broadcast();
                 UPlayerFPAnimInstance* FPAnim = Character->GetFPAnimInstance();
                 //FPAnim->UAnimInstance::Montage_Play();
                 
