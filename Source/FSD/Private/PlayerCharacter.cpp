@@ -621,7 +621,7 @@ void APlayerCharacter::Tick(float DeltaSeconds)
     FVector TargetLocation = OriginLocation + (FirstPersonCamera->GetForwardVector() * 500);
 
     GetWorld()->LineTraceSingleByChannel(UsableTrace, OriginLocation, TargetLocation, ECC_GameTraceChannel3, UsableCollisionParameters);
-    DrawDebugLine(GetWorld(), TargetLocation, OriginLocation, UsableTrace.bBlockingHit ? FColor::Blue : FColor::Red, false, 0.0f, 0, 1.f);
+    //DrawDebugLine(GetWorld(), TargetLocation, OriginLocation, UsableTrace.bBlockingHit ? FColor::Blue : FColor::Red, false, 0.0f, 0, 1.f);
 
     AActor* UsableHitActor = UsableTrace.GetActor();
 
@@ -687,7 +687,7 @@ void APlayerCharacter::Tick(float DeltaSeconds)
                     else {
                         UKismetSystemLibrary::PrintString(this, "[C++] PlayerCharacter Tick - Ledge Ray First Hit - Invalid", true, true, FColor::Green, 0.f);
                         GetWorld()->LineTraceSingleByChannel(LedgeSecondHit, LedgeSecondStart, LedgeSecondEnd, ECC_GameTraceChannel3, CollisionParameters);
-                        DrawDebugLine(GetWorld(), LedgeSecondStart, LedgeSecondEnd, LedgeSecondHit.bBlockingHit ? FColor::Blue : FColor::Red, false, 0.0f, 0, 1.f);
+                        //DrawDebugLine(GetWorld(), LedgeSecondStart, LedgeSecondEnd, LedgeSecondHit.bBlockingHit ? FColor::Blue : FColor::Red, false, 0.0f, 0, 1.f);
 
                         if (IsValid(LedgeSecondHit.GetActor())) {
                             UKismetSystemLibrary::PrintString(this, "[C++] PlayerCharacter Tick - Ledge Launched " + FString::SanitizeFloat(MoveForwardAxis), true, true, FColor::Green, 0.f);
