@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1",
+	"FriendlyName": "JSONParser",
+	"Description": "JSON datas with blueprint",
+	"Category": "Other",
+	"CreatedBy": "Santamaria Nicolas",
+	"CreatedByURL": "",
+	"DocsURL": "https://github.com/besanta/UEJsonParser",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"Modules": [
+		{
+			"Name": "JSONParser",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
+		}
+	]
+}
