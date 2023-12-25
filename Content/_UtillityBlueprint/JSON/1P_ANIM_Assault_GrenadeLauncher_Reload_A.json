@@ -1,0 +1,206 @@
+[
+  {
+    "Type": "AnimSequence",
+    "Name": "ANIM_DropPod_Airlock02_CloseInner",
+    "Class": "UScriptClass'AnimSequence'",
+    "Properties": {
+      "NumFrames": 13,
+      "TrackToSkeletonMapTable": [
+        {
+          "BoneTreeIndex": 0
+        },
+        {
+          "BoneTreeIndex": 1
+        },
+        {
+          "BoneTreeIndex": 2
+        },
+        {
+          "BoneTreeIndex": 3
+        },
+        {
+          "BoneTreeIndex": 4
+        },
+        {
+          "BoneTreeIndex": 5
+        },
+        {
+          "BoneTreeIndex": 6
+        },
+        {
+          "BoneTreeIndex": 7
+        },
+        {
+          "BoneTreeIndex": 8
+        },
+        {
+          "BoneTreeIndex": 9
+        }
+      ],
+      "BoneCompressionSettings": {
+        "ObjectName": "AnimBoneCompressionSettings'DefaultAnimBoneCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings.0"
+      },
+      "CurveCompressionSettings": {
+        "ObjectName": "AnimCurveCompressionSettings'DefaultAnimCurveCompressionSettings'",
+        "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings.1"
+      },
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "DroppodDoorOpenOuter_Cue",
+          "Notify": {
+            "ObjectName": "FSDAnimNotify_PlaySound'ANIM_DropPod_Airlock02_CloseInner:AnimNotify_PlaySound_2'",
+            "ObjectPath": "FSD/Content/Art/DropPod/Assets/Airlock/ANIM_DropPod_Airlock02_CloseInner.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2666667,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'ANIM_DropPod_Airlock02_CloseInner'",
+            "ObjectPath": "FSD/Content/Art/DropPod/Assets/Airlock/ANIM_DropPod_Airlock02_CloseInner.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "DropPodDoubleDoorClose_Cue",
+          "Notify": {
+            "ObjectName": "FSDAnimNotify_PlaySound'ANIM_DropPod_Airlock02_CloseInner:AnimNotify_PlaySound_3'",
+            "ObjectPath": "FSD/Content/Art/DropPod/Assets/Airlock/ANIM_DropPod_Airlock02_CloseInner.2"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.50980985,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": null,
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.2666667,
+          "LinkValue": 0.50980985,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'ANIM_DropPod_Airlock02_CloseInner'",
+            "ObjectPath": "FSD/Content/Art/DropPod/Assets/Airlock/ANIM_DropPod_Airlock02_CloseInner.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.2666667,
+      "RateScale": 0.5,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_DropPod_Airlock02_Skeleton'",
+        "ObjectPath": "FSD/Content/Art/DropPod/Assets/Airlock/SK_DropPod_Airlock02_Skeleton.0"
+      }
+    },
+    "SkeletonGuid": "F0A53718-4553DA1C-A4841C87-60A25972",
+    "CompressedTrackToSkeletonMapTable": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "CompressedCurveData": {
+      "FloatCurves": []
+    },
+    "CompressedDataStructure": {
+      "CompressedNumberOfFrames": 13,
+      "KeyEncodingFormat": "AKF_PerTrackCompression",
+      "TranslationCompressionFormat": "ACF_Identity",
+      "RotationCompressionFormat": "ACF_Identity",
+      "ScaleCompressionFormat": "ACF_Identity"
+    },
+    "BoneCompressionCodec": {
+      "ObjectName": "AnimCompress_PerTrackCompression'DefaultAnimBoneCompressionSettings:AnimCompress_PerTrackCompression_1'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimBoneCompressionSettings"
+    },
+    "CurveCompressionCodec": {
+      "ObjectName": "AnimCurveCompressionCodec_CompressedRichCurve'DefaultAnimCurveCompressionSettings:CurveCompressionCodec'",
+      "ObjectPath": "Engine/Content/Animation/DefaultAnimCurveCompressionSettings"
+    },
+    "CompressedRawDataSize": 2344
+  },
+  {
+    "Type": "FSDAnimNotify_PlaySound",
+    "Name": "AnimNotify_PlaySound_2",
+    "Outer": "ANIM_DropPod_Airlock02_CloseInner",
+    "Class": "UScriptClass'FSDAnimNotify_PlaySound'",
+    "Properties": {
+      "Sound": {
+        "ObjectName": "SoundCue'DroppodDoorOpenOuter_Cue'",
+        "ObjectPath": "FSD/Content/Audio/SFX/LevelElements/DropPod/PodDoors/DroppodDoorOpenOuter_Cue.0"
+      },
+      "PitchMultiplier": 1.2,
+      "bFollow": true,
+      "AttachName": "InnerAirlock_UpperWire"
+    }
+  },
+  {
+    "Type": "FSDAnimNotify_PlaySound",
+    "Name": "AnimNotify_PlaySound_3",
+    "Outer": "ANIM_DropPod_Airlock02_CloseInner",
+    "Class": "UScriptClass'FSDAnimNotify_PlaySound'",
+    "Properties": {
+      "Sound": {
+        "ObjectName": "SoundCue'DropPodDoubleDoorClose_Cue'",
+        "ObjectPath": "FSD/Content/Audio/SFX/LevelElements/DropPod/PodDoors/DropPodDoubleDoorClose_Cue.0"
+      },
+      "PitchMultiplier": 1.5,
+      "bFollow": true,
+      "AttachName": "InnerAirlock_UpperWire"
+    }
+  }
+]
