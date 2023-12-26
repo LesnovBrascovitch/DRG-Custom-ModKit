@@ -34,4 +34,7 @@ class UAdditionalAnimUtillityBlueprintBPLibrary : public UBlueprintFunctionLibra
 	/* XML file */
 	UFUNCTION(BlueprintCallable, Category = "AnimationMontage")
 	static void SetMontagePlayScale(UAnimMontage* montage, float playscale);
+
+	UFUNCTION(BlueprintCallable, Category = "EditorUtillity")
+	static TArray<FString> GetSelectedFolders();
 };
