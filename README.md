@@ -11,6 +11,7 @@ You can use EUBP_SamPacker to make never cooked folder paths and WhiteList and B
 When you firstly compile, it would take time. After that, packaging time shouldn't be problem with using never cooked paths. (For exsample, packaging DoomShotgun folder would take less than 1 min with i5-2500k, RTX 3060, RAM24Gb, SSD)
 
 ## Notes
+- You can't make executable with this project, migrating assets to another project would cause collapted asset(Not mod assets you make, only DRG's assets).
 - Currently including many sources from various modders to make it faster to understand how the DRG's function works. (These might be removed in the future)
 - Other modder's DRG sources are moved to under _DRGModding folder.
 - DRGLib produces many errors in the editor. (Might fix in the future)
