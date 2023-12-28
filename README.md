@@ -6,6 +6,7 @@ You can make DRG mod in the editor and migrate to DRG without using additional f
 ## Notes
 - Currently including many sources from various modders to make it faster to understand how the DRG's function works. (These might be removed in the future)
 - Other modder's DRG sources are moved to under _DRGModding folder.
+- DRGLib produces many errors in the editor. (Might fix in the future)
 
 ## Tutorials
 
