@@ -8,6 +8,8 @@ Also this project has some helper BPs, such as Vanity testing, Victory Pose Play
 DRG-Custom-ModKit/_Package/_SamsPackerTemplate must be used for this project. Only this packer can compile your mod and UE's compile and other packing tools don't work with this project at all.
 You can use EUBP_SamPacker to make never cooked folder paths and WhiteList and BlackList paths.
 
+When you firstly compile, it would take time. After that, packaging time shouldn't be problem with using never cooked paths. (For exsample, packaging DoomShotgun folder would take less than 1 min with i5-2500k, RTX 3060, RAM24Gb, SSD)
+
 ## Notes
 - Currently including many sources from various modders to make it faster to understand how the DRG's function works. (These might be removed in the future)
 - Other modder's DRG sources are moved to under _DRGModding folder.
