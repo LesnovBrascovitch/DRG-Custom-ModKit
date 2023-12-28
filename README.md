@@ -4,6 +4,9 @@ This Mod Kit recreated some C++ codes and materials, BPs, animations, anim notif
 You can make DRG mod in the editor and migrate to DRG without using additional framework(If you use recreated C++ source's functions).  
 
 Also this project has some helper BPs, such as Vanity testing, Victory Pose Player, Editor Utility Blueprints to test, edit things easily.
+## Packaging
+DRG-Custom-ModKit/_Package/_SamsPackerTemplate must be used for this project. Only this packer can compile your mod and UE's compile and other packing tools don't work with this project at all.
+You can use EUBP_SamPacker to make never cooked folder paths and WhiteList and BlackList paths.
 
 ## Notes
 - Currently including many sources from various modders to make it faster to understand how the DRG's function works. (These might be removed in the future)
