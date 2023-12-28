@@ -17,9 +17,12 @@ You can use EUBP_SamPacker to make never cooked folder paths and WhiteList and B
 
 ## Credits
 
+- [Assembly Storm's DRG Sources](https://github.com/trumank/drg-mods)
 - [Buckminsterfullerene02's Community-Modkit](https://github.com/DRG-Modding/Community-Modkit)
-- [Trumank's DRG Sources](https://github.com/trumank/drg-mods)
-- [Samamster's DRGLib](https://github.com/SamsDRGMods/DRGLib)
+- [Fancyneer's Animation Assets](https://mod.io/u/fancyneer)
 - [GoldBlade's ModHub and DRG Sources](https://github.com/GoldBlade77/DRG-Mods/tree/main)
+- [Hlomida's Boscochan Assets](https://mod.io/g/drg/u/hlomida)
+- [Samamster's DRGLib](https://github.com/SamsDRGMods/DRGLib)
+
 
 Developed with Unreal Engine 4
