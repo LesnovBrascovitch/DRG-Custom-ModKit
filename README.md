@@ -26,6 +26,7 @@ When you firstly compile, it would take time. After that, packaging time shouldn
 - [GoldBlade's ModHub and DRG Sources](https://github.com/GoldBlade77/DRG-Mods/tree/main)
 - [Hlomida's Boscochan Assets](https://mod.io/g/drg/u/hlomida)
 - [Samamster's DRGLib](https://github.com/SamsDRGMods/DRGLib)
+- [Pacagma's Animation and Meshes Assets](https://github.com/Pacagma/)
 
 
 Developed with Unreal Engine 4
