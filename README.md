@@ -3,6 +3,8 @@ This project is based on Buckminsterfullerene02's ModKit, Currently this project
 This Mod Kit recreated some C++ codes and materials, BPs, animations, anim notifies etc to make some modding(such as animation, custom weapon, player character related) easier.  
 You can make DRG mod in the editor and migrate to DRG without using additional framework(If you use recreated C++ source's functions).  
 
+Also this project has some helper BPs, such as Vanity testing, Victory Pose Player, Editor Utility Blueprints to test, edit things easily.
+
 ## Notes
 - Currently including many sources from various modders to make it faster to understand how the DRG's function works. (These might be removed in the future)
 - Other modder's DRG sources are moved to under _DRGModding folder.
